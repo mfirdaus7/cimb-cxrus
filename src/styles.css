@@ -95,7 +95,9 @@ body.dark-mode .card {
 .navbar-nav .dropdown:hover .dropdown-menu {
   display: block;
 }
-
+.test{
+  display: block;
+}
 .dropdown-menu {
   display: none;
 }
