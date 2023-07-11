@@ -1,0 +1,131 @@
+<section>
+  <section class="banner">
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide"
+      data-ride="carousel"
+    >
+      <!-- <ol class="carousel-indicators">
+        <li
+          *ngFor="let middle of middleData; let i = index"
+          data-target="#carouselExampleIndicators"
+          [attr.data-slide-to]="i"
+          [class.active]="i === 0"
+        ></li>
+      </ol> -->
+      <div class="carousel-inner">
+        <div
+          class="carousel-item"
+          *ngFor="let middle of middleData; let i = index"
+          [class.active]="i === 0"
+        >
+          <img
+            [src]="middle.attributes.imageURL"
+            class="d-block w-100"
+            alt="Slide {{ i + 1 }}"
+          />
+          <div class="carousel-caption">
+            <h3>{{ middle.attributes.title }}</h3>
+            <p>{{ middle.attributes.description }}</p>
+            <a class="cta-button" href="#">Get Started</a>
+          </div>
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleIndicators"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleIndicators"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+</section>
+<section class="content">
+  <div class="container">
+    <!-- top -->
+    <!-- <div *ngIf="middleData">
+      <div class="row m-4">
+        <div
+          class="d-flex p-0 mb-5"
+          *ngFor="let item of middleData; let i = index"
+          [ngClass]="{
+            'flex-row': i === 0,
+            'flex-row-reverse': i === 1
+          }"
+        >
+          <div class="align-center-div col-xs-12 col-sm-8 p-2">
+            <div class="text-justify">
+              <h3 class="text-danger mb-3">
+                {{ item.attributes.title }}
+              </h3>
+              <p>{{ item.attributes.description }}</p>
+            </div>
+          </div>
+
+          <img
+            class="img-fluid col-xs-12 col-sm-4"
+            src="{{ item.attributes.imageURL }}"
+          />
+        </div>
+      </div>
+    </div> -->
+    <!-- what's news section -->
+    <h2 class="text-danger mb-4 text-center mt-4">What's New in ProsperUs</h2>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4" *ngFor="let item of whatsNewsData">
+        <div class="card what-card">
+          <div class="card-body">
+            <p class="text-center">
+              <img src="{{ item.attributes.imageURL }}" />
+            </p>
+            <h5 class="card-title text-center">{{ item.attributes.title }}</h5>
+            <p class="text-center">
+              <a href="{{ item.attributes.linkURL }}" class="btn btn-primary">{{
+                item.attributes.linkText
+              }}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- what's news section -->
+    <h2 class="text-danger mb-4 text-center">Insights</h2>
+    <div class="row">
+      <div class="col-xs-12 col-sm-3" *ngFor="let item of insights">
+        <div class="card custom-card p-0">
+          <img
+            class="card-img-top"
+            src="assets/images/card/genting.jpg"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-text text-primary">{{ item.attributes.title }}</h5>
+            <p class="text-small text-left text-date">
+              <i
+                ><small>{{ item.attributes.newsDate }}</small></i
+              >
+            </p>
+            <p class="text-small text-left text-content">
+              <i
+                ><small>{{ item.attributes.description }} ...</small></i
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cimbcgs-angular-deployment
+  namespace: cimbcgs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cimbcgs-angular
+  template:
+    metadata:
+      labels:
+        app: cimbcgs-angular
+    spec:
+      containers:
+        - name: cimbcgs-angular-container
+          image: cimbcgs:v1
+          ports:
+            - containerPort: 80

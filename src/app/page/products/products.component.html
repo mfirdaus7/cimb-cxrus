@@ -1,0 +1,33 @@
+<div class="banner">
+  <h1 class="text-danger">Products</h1>
+</div>
+
+<section class="my-4">
+  <!-- top card -->
+  <div class="">
+    <div class="container py-4">
+      <p>
+        Discover a comprehensive selection of essential products designed to
+        empower you on your journey to a prosperous financial future. Gain the
+        tools and resources necessary to take control of your financial
+        well-being, ensuring a solid foundation for your future success.
+      </p>
+      <div class="row">
+        <div class="col-xs-12 col-md-4" *ngFor="let item of products">
+          <div class="card products-card">
+            <div class="card-body">
+              <p class="text-center"><i class="fas fa-chart-line"></i></p>
+              <h5 class="card-title text-danger text-center">
+                {{ item.attributes.title }}
+              </h5>
+
+              <p class="card-text text-center">
+                {{ item.attributes.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

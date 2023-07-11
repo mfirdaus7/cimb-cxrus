@@ -1,0 +1,30 @@
+.login-form {
+    background-color: #f2f2f2 !important;
+    border-radius: 10px !important;
+    padding: 20px !important;
+    width:60%;
+    margin:auto;
+  }
+
+  .banner {
+    background-image: url('../../../assets/images/banner/Banner_AboutUs.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .forgot-password {
+    display: block;
+    margin-top: 10px;
+    color: blue;
+  }
+  
+  input#email, input#password {
+    background: white;
+}

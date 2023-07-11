@@ -1,0 +1,30 @@
+<div class="banner">
+  <h1 class="text-danger">Onboarding Journey</h1>
+</div>
+<div class="container">
+  <div class="row justify-content-between align-items-center">
+    <div class="col">
+      <p *ngIf="isLoggedIn" class="mt-4">Welcome to your dashboard, {{ userProfile.username }}</p>
+      <h3 *ngIf="!isLoggedIn" class="mt-4 mb-4">Please login o sign up to access the dashboard.</h3>
+    </div>
+    <div class="col-auto" *ngIf="isLoggedIn">
+      <button class="btn btn-primary btn-logout" (click)="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div *ngIf="isLoggedIn">
+    <h2 class="text-danger mb-4 text-center">Insights</h2>
+    <div class="row">
+      <div class="col-xs-12 col-sm-3" *ngFor="let item of insightsData">
+        <div [ngClass]="item.attributes.class">
+          <img class="card-img-top" src="assets/images/card/genting.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-text text-primary">{{ item.attributes.title }}</h5>
+            <p class="text-small text-left"><i><small>{{ item.attributes.newsDate }}</small></i></p>
+            <p class="text-small text-left"><i><small>{{ item.attributes.description }} ...</small></i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

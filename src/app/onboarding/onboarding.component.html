@@ -1,0 +1,82 @@
+<div class="banner">
+  <h1 class="text-danger">Onboarding Journey</h1>
+</div>
+
+<section class="my-4">
+  
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="needs-validation login-form">
+  <p>Welcome to our onboarding process! This is an essential step to get you started on your journey with us. 
+    Our onboarding program is designed to provide you with the necessary information, tools, and resources to smoothly integrate into our organization. 
+    </p><p>Through this process, you will gain a deeper understanding of our company culture, values, and goals. 
+    We aim to ensure that you feel supported and equipped to excel in your role. Let's embark on this exciting onboarding journey together!</p>
+    <p>Please take a moment to fill in the following detail.</p>
+    <hr />
+  <div class="mb-3">
+    <label for="name" class="form-label">Name:</label>
+    <input type="text" id="name" class="form-control" formControlName="name" required placeholder="Insert yor name" />
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" id="email" class="form-control" formControlName="email" required placeholder="example@example.com" >
+  </div>
+
+  <!-- Additional fields -->
+
+  <div class="mb-3">
+    <label for="employmentStatus" class="form-label">Employment Status:</label>
+    <select id="employmentStatus" class="form-select" formControlName="employmentStatus" required>
+      <option value="">-- Select --</option>
+      <option value="Full-time">Full-time</option>
+      <option value="Part-time">Part-time</option>
+      <option value="Contract/Fixed-term">Contract/Fixed-term</option>
+      <option value="Temporary">Temporary</option>
+      <option value="Freelance/Independent Contractor">Freelance/Independent Contractor</option>
+      <option value="Internship/Apprenticeship">Internship/Apprenticeship</option>
+      <option value="Self-employed/Entrepreneur">Self-employed/Entrepreneur</option>
+    </select>
+  </div>
+  
+
+  <div class="mb-3">
+    <label for="company" class="form-label">Company:</label>
+    <input type="text" id="company" class="form-control" formControlName="company" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="annualIncome" class="form-label">Annual Income:</label>
+    <input type="number" id="annualIncome" class="form-control" formControlName="annualIncome" required  placeholder="100000" >
+  </div>
+
+  <div class="mb-3">
+    <label for="sourceOfWealth" class="form-label">Source of Wealth:</label>
+    <select id="sourceOfWealth" class="form-select" formControlName="sourceOfWealth" multiple required>
+      <option value="savings">Savings</option>
+      <option value="inheritance">Inheritance</option>
+      <option value="investment">Investment</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Currency to Invest</label>
+    <div class="form-check">
+      <input class="form-check-input radio-btn" type="radio" id="currencyToInvestUSD" name="currencyToInvest" value="USD" formControlName="currencyToInvest">
+      <label class="form-check-label" for="currencyToInvestUSD">USD</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input radio-btn" type="radio" id="currencyToInvestSGD" name="currencyToInvest" value="SGD" formControlName="currencyToInvest">
+      <label class="form-check-label" for="currencyToInvestSGD">SGD</label>
+    </div>
+  </div>
+<hr />
+  <div class="mb-3">
+    <div class="form-check">
+      <input class="form-check-input " type="checkbox" id="acknowledge" formControlName="acknowledge" required>
+      <label class="form-check-label" for="acknowledge">I hereby acknowledge that I have read and understood the terms and conditions, and I agree to abide by them.</label>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary mr-4">Accept</button>
+  <button type="button" class="btn btn-secondary">Cancel</button>
+</form>
+</section>

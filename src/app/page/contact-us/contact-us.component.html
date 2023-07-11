@@ -1,0 +1,22 @@
+<div class="banner">
+  <h1 class="text-danger">Contact Us</h1>
+</div>
+
+<section class="my-4">
+  <!-- top card -->
+  <div class="">
+    <div class="container py-4">
+      <p>
+        We have compiled a list of Frequently Asked Questions for your easy
+        reference. Simply click on the above links to find out more. However
+        should you have further queries, please do not hesitate to contact us
+        via the following:
+      </p>
+      <div class="row">
+        <div *ngFor="let contact of contacts">
+          <div [innerHTML]="contact.attributes.content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
